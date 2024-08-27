@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fintack</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js" integrity="sha512-NeFv3hB6XGV+0y96NVxoWIkhrs1eC3KXBJ9OJiTFktvbzJ/0Kk7Rmm9hJ2/c2wJjy6wG0a0lIgehHjCTDLRwWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" integrity="sha512-B46MVOJpI6RBsdcU307elYeStF2JKT87SsHZfRSkjVi4/iZ3912zXi45X5/CBr/GbCyLx6M1GQtTKYRd52Jxgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Racing+Sans+One&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" integrity="sha512-B46MVOJpI6RBsdcU307elYeStF2JKT87SsHZfRSkjVi4/iZ3912zXi45X5/CBr/GbCyLx6M1GQtTKYRd52Jxgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            font-family: "Open Sans", sans-serif;
+        }
+        .header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+        }
+        .head{
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+        }
+        .header_menu{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            flex: 1;
+            justify-content: center;
+           
+        }
+        .header_link{
+            text-decoration: none;
+            color: black;
+            
+        }
+        .header_btn{
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            gap: 1rem;
+            justify-content: end;
+        }
+        .btn{
+            padding: 0.5em 1em;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .head p{
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .hero{
+            margin-top: 10rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .hero_title{
+            font-size: 4rem;
+            text-align: center;
+            letter-spacing: -0.05em;
+        }
+        .hero_desc{
+            font-size: 1.25rem;
+            margin: 1rem 0rem;
+            text-align: center;
+            max-width:60ch;
+
+        }
+        .container{
+            width: 90%;
+            margin-inline: auto;
+            
+        }
+        .pricing{
+            margin-top: 10rem;
+        }
+        .pricing_title{
+            font-size: 2.25rem;
+        }
+        .pricing_desc{
+            font-size: 1.25rem;
+        }
+        .pricing_options{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            margin-top:2rem;
+        }
+        .pricing_box{
+            background-color: black;
+            color: white;
+            padding: 2em;
+            border-radius: 10px;
+        }
+        .pricing_rate{
+            font-size: 2rem;
+        }
+        .pricing_plan{
+            margin: 1em;
+        }
+        .pricing_details{
+            color: #ccc;
+        }
+        .pricing_btn{
+            background-color: white;
+            columns: black;
+            border-radius: 100000px;
+            padding: 1em 2em;
+            margin:2em 0;
+            text-align: center;
+            width: 90%;
+        }
+        .pricing_list{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .card-1{
+            margin-top: 100px;
+            width: 300px;
+            height: 400px;  
+        }
+        .card-info{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1.3rem;
+        }
+        .nav-bar{
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: row;
+            gap: 2.3rem;
+            justify-content: center;
+        }
+
+        footer{
+            background-color: black;
+            margin-bottom: -2.2rem;
+            margin-top: 2.5rem;
+        }
+.footer-1{
+margin-left: 100px;
+width:1150px;
+height:300px;
+display: flex;
+flex-direction: row;
+flex-grow:  2fr 1fr 1fr 1fr 1fr;
+justify-content: space-between;
+}
+.in-foot-2,.in-foot-3,.in-foot-4,.in-foot-5{
+width:19%;
+height: 100%;
+border-radius: 10px;
+margin-top: 10px;
+padding-top: 35px;
+padding-left:-20px;
+}
+.in-foot-1{
+width:22%;
+height: 100%;
+border-radius: 10px;
+margin-top: 10px;
+padding-top:40px;
+margin-right:10px;
+}
+.text-data{
+    font: 15px Outfit,sans-serif;
+    color: #7d7d7d;
+    padding-left: 35%;
+    line-height: 1.3;
+}
+.text-data:hover{
+    color:#ffffff;
+    cursor: pointer;
+}
+
+.disc{
+    margin-left: 100px;
+    margin-right: 170px;
+    margin-top:40px;
+    
+}
+.end{
+    margin-left: 100px;
+    margin-right: 170px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    
+}
+.end-1{
+    width: 22%;
+}
+.ch{
+    color: #ffffff;
+    text-decoration: underline;
+}
+.container-last{
+    display: flex;
+    flex-direction: row;
+    width:20%;
+    justify-content: space-between;
+    margin-left: 990px;
+    margin-top: -40px;
+    
+}
+.item1,.item2,.item3,.item4{
+    width:23%;
+    height: 100%;
+    border-radius: 10px;
+}
+.text-format{
+    margin-left:170px;
+    transform: translate(1%,-130%);
+    cursor: pointer;
+}
+.play-vid:hover{
+    cursor: pointer;
+}
+.text{
+    text-shadow: 10px 10px 25px rgba(90, 86, 86, 0.14);
+}
+.data-info{
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+    </style>
+</head>
+<body>
+        <header class="header container">
+            <div class="head">
+                <p>Fintrack</p>
+            </div>
+            <!-- <nav class="header_menu">
+                <a class="header_link" href="#price">Pricing</a>
+                <a class="header_link"href="">Features</a>
+                <a class="header_link"href="">Contact Us</a>
+            </nav> -->
+            <h1>LOGO</h1>
+            <div class="header_btn">
+                <button class="btn">Login</button>
+                <button class="btn">Enter App</button>
+            </div>
+        </header>
+
+        <section>
+            <div class="nav-bar">
+                <div>
+                    <h4>Shop</h4>
+                </div>
+                <div>
+                    <h4>Stories</h4>
+                </div>
+                <div>
+                    <h4>Skills</h4>
+                </div>
+                <div>
+                    <h4>About</h4>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="hero container">
+            <h1 class="hero_title">Discover Our Products</h1>
+            <p class="hero_desc">Effortlessly manage your business financies with finstrack.Our intuitive software makes bookkeeping breeze</p>
+
+        </section>
+
+        <section style="display: flex;flex-direction: row;gap: 1rem;margin-left: 100px;">
+        <div class="card-info">
+            <div class="card-1">
+                <div>
+                    <img src="image/shoes.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/handbag.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/cap.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/belt.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/handbag.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/cap.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/belt.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/shoes.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/cap.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/handbag.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/belt.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <img src="image/shoes.jpg" alt="" width="290px" height="300px" style="margin-left:0.2em;border-radius: 0.8rem;">
+                </div>
+                <div>
+                    <p style="margin-top:0.2rem;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="data-info">
+                    <div>
+                        <p style="margin-top:0.2rem;"><a href="">SignIn </a>if you have an account</p>
+                    </div>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        </section>
+
+        <footer>
+
+            <div class="footer-1">
+              <div class="in-foot-1">
+                  <p style="color: #ffffff;font: 24.06px 'Outfit',sans-serif;cursor: pointer;">interact.</p>
+                  <p style="font: 15px 'Outfit',sans-serif;color: #7d7d7d;cursor: pointer;;">We are your personal guide for exploring web3 projects & earning 100x rewards</p>
+              </div>
+              <div class="in-foot-2">
+                <p style="font: 16px 'Outfit',sans-serif;color: #ffffff; padding-left: 35%;">INTRACT</p>
+                <p class="text-data">Explore quests</p>
+                <p class="text-data">Communities</p>
+                <p class="text-data">Alpha hub</p>
+              </div>
+              <div class="in-foot-3">
+                <p style="font: 16px 'Outfit',sans-serif;color: #ffffff; padding-left: 35%;">EARN</p>
+                <p class="text-data">Refer & Earn</p>
+                <p class="text-data">Leaderboard</p>
+                <p class="text-data">Achievements</p>
+              </div>
+              <div class="in-foot-4">
+                <p style="font: 16px 'Outfit',sans-serif;color: #ffffff; padding-left: 35%;">ABOUT</p>
+                <p class="text-data">Product Roadmap</p>
+                <p class="text-data">Affiliate Program</p>
+                <p class="text-data">Sign up Program</p>
+                <p class="text-data">Growth Community</p>
+                <p class="text-data">Blogs</p>
+              </div>
+              <div class="in-foot-5">
+                <p style="font: 16px 'Outfit',sans-serif;color: #ffffff; padding-left: 35%;">SUPPORT</p>
+                <p class="text-data">Help Centre</p>
+                <p class="text-data">Create your quest</p>
+                <p class="text-data">Terms of Service</p>
+                <p class="text-data">Privacy Policy</p>
+                <p class="text-data">CommunityGuidelines</p>
+              </div>
+            </div>
+            <h3 style="color: rgba(159, 154, 154, 0.644);margin-top:-20px;margin-left: 100px;margin-right: 170px;"><hr></h3>
+  
+            <div class="disc">
+              <p  style="font: 15px 'Outfit',sans-serif;color:#7d7d7d;line-height: 1.3;"><span style="font: 15px 'Outfit',sans-serif;color: #dad6d6;">Disclaimer:</span> Crypto Products, Virtual Digital Assets, and NFTs are unregulated and can be highly risky. There may be no regulatory recourse for any loss from such transactions. We advise the viewer to proceed with caution. Nothing in this website or any communication published by us amounts to, is intended to be, or should be construed as investment or purchase advice of any kind or financial advice or promotion under any applicable laws. Any decision made based on the content provided on this website or any communication published by us shall not be attributable to us.</p>
+            </div>
+            <br>
+            <h3 style="color: rgba(159, 154, 154, 0.644);margin-top:-20px;margin-left: 100px;margin-right: 170px;"><hr></h3>
+  
+          <div class="end">
+            <div class="end-1">
+            <p style="font:14px Outfit,sans-serif;color: #ffffff;">CREATED BY <a class="ch" href="">KULADEEP</a></p>
+          </div>
+          </div>
+          </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js" integrity="sha512-NeFv3hB6XGV+0y96NVxoWIkhrs1eC3KXBJ9OJiTFktvbzJ/0Kk7Rmm9hJ2/c2wJjy6wG0a0lIgehHjCTDLRwWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
